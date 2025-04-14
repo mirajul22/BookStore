@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "name": "George Orwell",
+      "title": "1984",
+      "category": "Dystopian",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 12.99,
+      "image": "https://www.sunderlandecho.com/webimg/b25lY21zOmQyMTBmNzlmLTU1ZGUtNDgyOS1iZGE1LTg2YzUzMTQxMjFkYjowNDBlNjA5ZS1jYmQxLTRmZjYtYTM1YS0wM2NkNWM0OGQwODE=.jpg?"
+    },
+    {
+      "id": 2,
+      "name": "Harper Lee",
+      "title": "To Kill a Mockingbird",
+      "category": "Free",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 0,
+      "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c"
+    },
+    {
+      "id": 3,
+      "name": "J.K. Rowling",
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "category": "Fantasy",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 15.99,
+      "image": "https://gnomenbow.com/cdn/shop/articles/J.K.jpg?v=1505961581&width=1500"
+    },
+    {
+      "id": 4,
+      "name": "J.R.R. Tolkien",
+      "title": "The Hobbit",
+      "category": "Free",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 0,
+      "image":  "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+    },
+    {
+      "id": 5,
+      "name": "F. Scott Fitzgerald",
+      "title": "The Great Gatsby",
+      "category": "Classic",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 9.99,
+      "image": "https://ca-times.brightspotcdn.com/dims4/default/3005054/2147483647/strip/true/crop/600x440+0+0/resize/1200x880!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fe9%2Fab%2F02958885a8e7315ff3511c37af39%2Fla-xpm-photo-2013-jun-11-la-et-jc-great-gatsby-first-edition-auction-20130611"
+    },
+    {
+      "id": 6,
+      "name": "Jane Austen",
+      "title": "Pride and Prejudice",
+      "category": "Free",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 90,
+      "image":  "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c"
+    },
+    {
+      "id": 7,
+      "name": "Markus Zusak",
+      "title": "The Book Thief",
+      "category": "Historical Fiction",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 14.59,
+      "image": "https://ew.com/thmb/EAR-UGYwhfJ4o6u4nhHLATIvLkY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/book-thief-1ce7935a71cb49e599d97ac63148fc74.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Stephen King",
+      "title": "The Shining",
+      "category": "Horror",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 13.79,
+      "image": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c"
+    },
+    {
+      "id": 9,
+      "name": "Paulo Coelho",
+      "title": "The Alchemist",
+      "category": "Free",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 0,
+      "image": "https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+    },
+    {
+      "id": 10,
+      "name": "Suzanne Collins",
+      "title": "The Hunger Games",
+      "category": "Dystopian",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 12.49,
+      "image": "https://www.womansworld.com/wp-content/uploads/2024/08/hunger-games-book.jpg?quality=86&strip=all"
+    },
+    {
+      "id": 11,
+      "name": "Michelle Obama",
+      "title": "Becoming",
+      "category": "Biography",
+      "des": "Expand your mind with insightful reads that educate, motivate, and inform.",
+      "price": 16.99,
+      "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765"
+    }
+  ]
+  
