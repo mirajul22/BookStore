@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
+import axios from 'axios'
+import toast from 'react-hot-toast'
 
 
 const Signup = () => {
@@ -11,7 +13,30 @@ const Signup = () => {
       formState: { errors },
     } = useForm()
   
-    const onSubmit = (data) => console.log(data)
+    
+    const onSubmit = async (data) => {
+      const UserInfo = {
+        fullname:data.fullname,
+        email:data.email,
+        password:data.password
+      }
+      try {
+        const res = await axios.post('http://localhost:8080/auth/signup',UserInfo);
+        console.log('resData =>',res.data);
+        if(res.data)
+          {
+            toast.success('User register successfully!');
+          }
+          localStorage.setItem('user',JSON.stringify(res.data.user));  
+      } catch (error) {
+        if(error.response)
+        {
+          console.log(error);
+          toast.error("Error: " + error.response.data.message);
+        }
+      }
+      
+    }
 
   return (
     <div className='flex h-screen items-center justify-center'>
@@ -26,19 +51,19 @@ const Signup = () => {
 
     <div className='flex flex-col gap-2 items-left mt-4'>
         <span className=''>Name:</span>
-        <input type='text' {...register("name", { required: true })} placeholder='Enter Your Fullname' className='px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
-        {errors.name && <span className='text-red-500'>This field is required</span>}
+        <input type='text' {...register("fullname", { required: true })} placeholder='Enter Your Fullname' className='dark:text-black px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
+        {errors.fullname && <span className='text-red-500'>This field is required</span>}
         </div>
 
         <div className='flex flex-col gap-2 items-left'>
         <span className=''>Email:</span>
-        <input type='email' {...register("email", { required: true })} placeholder='Enter Your Email' className='px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
+        <input type='email' {...register("email", { required: true })} placeholder='Enter Your Email' className='dark:text-black px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
         {errors.email && <span className='text-red-500'>This field is required</span>}
         </div>
 
         <div className='flex flex-col gap-2 items-left'>
         <span>Password:</span>
-        <input type='password' {...register("password", { required: true })} placeholder='Enter Your Password' className='px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
+        <input type='password' {...register("password", { required: true })} placeholder='Enter Your Password' className='dark:text-black px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
         {errors.password && <span className='text-red-500'>This field is required</span>}
         </div>
 

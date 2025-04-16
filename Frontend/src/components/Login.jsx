@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from "react-hook-form"
+import axios from 'axios'
+import toast from 'react-hot-toast'
 const Login = () => {
 
   const {
@@ -9,7 +11,29 @@ const Login = () => {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) =>{
+    const UserInfo = {
+      email:data.email,
+      password:data.password
+    }
+try {
+  const res = await axios.post('http://localhost:8080/auth/login',UserInfo);
+    console.log('login Data =>',res.data);
+
+    if(res.data)
+    {
+      toast.success('User Login successfully!');
+    }
+    localStorage.setItem('user',JSON.stringify(res.data.data));
+} catch (error) {
+  if(error.response)
+    {
+      console.log(error);
+      toast.error("Error: " + error.response.data.message);
+    }
+}
+    
+  } 
 
   return (
     <>
@@ -23,13 +47,13 @@ const Login = () => {
     <div className='flex flex-col gap-4'>
         <div className='flex flex-col gap-2 items-left mt-4'>
         <span className=''>Email:</span>
-        <input type='email' placeholder='Enter Your Email' className='px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'  {...register("email", { required: true })}/>
+        <input type='email' placeholder='Enter Your Email' className='dark:text-black px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'  {...register("email", { required: true })}/>
         {errors.email && <span className='text-red-500'>This field is required</span>}
         </div>
 
         <div className='flex flex-col gap-2 items-left'>
         <span>Password:</span>
-        <input type='password' placeholder='Enter Your Password' className='px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100' {...register("password", { required: true })}/>
+        <input type='password' placeholder='Enter Your Password' className='dark:text-black px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100' {...register("password", { required: true })}/>
         {errors.password && <span className='text-red-500'>This field is required</span>}
         </div>
 

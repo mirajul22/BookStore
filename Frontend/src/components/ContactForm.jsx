@@ -26,19 +26,19 @@ const ContactForm = () => {
 
     <div className='flex flex-col gap-2 items-left mt-8'>
         <span className=''>Name:</span>
-        <input type='text' {...register("name", { required: true })} placeholder='Enter Your Fullname' className='px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
+        <input type='text' {...register("name", { required: true })} placeholder='Enter Your Fullname' className='dark:text-black px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
         {errors.name && <span className='text-red-500'>This field is required</span>}
         </div>
 
         <div className='flex flex-col gap-2 items-left'>
         <span className=''>Email:</span>
-        <input type='email' {...register("email", { required: true })} placeholder='Enter Your Email' className='px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
+        <input type='email' {...register("email", { required: true })} placeholder='Enter Your Email' className='dark:text-black px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
         {errors.email && <span className='text-red-500'>This field is required</span>}
         </div>
 
         <div className='flex flex-col gap-2 items-left'>
         <span>Message:</span>
-        <textarea type='text' rows="4"  {...register("password", { required: true })} placeholder='Enter Your Password' className='px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
+        <textarea type='text' rows="4"  {...register("password", { required: true })} placeholder='Enter Your Password' className='dark:text-black px-4 py-2 border focus:outline-none rounded-lg focus:bg-sky-100'/>
         {errors.password && <span className='text-red-500'>This field is required</span>}
         </div>
 

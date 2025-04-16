@@ -1,10 +1,27 @@
-import React from 'react'
-import List from '/public/Data/List.json'
+import React, { useEffect, useState } from 'react'
 import Card from './Card';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+
 const CouresHero = () => {
 
-    console.log('course data =>',List);
+   const [book,setBook] = useState([]);
+
+   useEffect(()=>{
+      const getData = async () =>{
+ 
+        try {
+        const res = await axios.get('http://localhost:8080/api/book');
+        console.log('getData',res.data);
+        setBook(res.data);
+        } catch (error) {
+          console.log("Api is not giving data =>",error);  
+        }
+      }
+      
+      getData()
+   },[])
 
   return (
     <>
@@ -18,7 +35,7 @@ const CouresHero = () => {
     </div>
 
     <div className='mt-12 grid grid-cols-1 md:grid-cols-4'>
-       {List.map((item)=>(
+       {book.map((item)=>(
          <Card items={item} key={item.id}/>
        ))}
     </div>
