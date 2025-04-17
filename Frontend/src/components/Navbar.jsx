@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, {  useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import Login from "./Login";
+import Logout from "./Logout";
+import { useAuth } from "../context/AuthProvider";
 
 const Navbar = () => {
+
+  const [authUser,setAuthUser] = useAuth();
 
   const [sticky,setSticky] = useState(false);
 
@@ -106,7 +110,7 @@ const Navbar = () => {
                 {navItems}
               </ul>
             </div>
-            <a className='text-2xl font-bold cursor-pointer'>Book Store</a>
+            <Link to='/' className='text-2xl font-bold cursor-pointer'>Book Store</Link>
           </div>
           <div className='navbar-end space-x-3'>
             <div className='navbar-center hidden lg:flex'>
@@ -162,13 +166,14 @@ const Navbar = () => {
                 </svg>
               </label>
             </div>
-
-            <div>
+            {authUser ? <Logout/> : <div>
               <a className='bg-black text-white py-2 px-4 rounded-md cursor-pointer' onClick={()=>document.getElementById('my_modal_3').showModal()}>
                 Login
               </a>
               <Login/>
-            </div>
+            </div>}
+            
+            
           </div>
         </div>
       </div>

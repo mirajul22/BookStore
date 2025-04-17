@@ -1,11 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from "react-hook-form"
 import axios from 'axios'
 import toast from 'react-hot-toast'
+import Navbar from './Navbar'
 
 
 const Signup = () => {
+  
+  const navigate = useNavigate();
 
    const {
       register,
@@ -27,7 +30,10 @@ const Signup = () => {
           {
             toast.success('User register successfully!');
           }
-          localStorage.setItem('user',JSON.stringify(res.data.user));  
+          localStorage.setItem('user',JSON.stringify(res.data.user)); 
+          setTimeout(()=>{
+            navigate('/')
+          },1500)
       } catch (error) {
         if(error.response)
         {
@@ -39,6 +45,8 @@ const Signup = () => {
     }
 
   return (
+    <>
+    <Navbar/>
     <div className='flex h-screen items-center justify-center'>
 <div id="my_modal_3" className="border dark:border-slate-800  rounded-md md:w-1/4 ">
   <div className="model-box dark:bg-slate-900 p-10 relative">
@@ -75,6 +83,7 @@ const Signup = () => {
   </div>
 </div>
     </div>
+    </>
   )
 }
 

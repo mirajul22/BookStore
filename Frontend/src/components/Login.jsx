@@ -25,11 +25,17 @@ try {
       toast.success('User Login successfully!');
     }
     localStorage.setItem('user',JSON.stringify(res.data.data));
+    setTimeout(()=>{
+      window.location.reload();
+    },1000)
 } catch (error) {
   if(error.response)
     {
       console.log(error);
       toast.error("Error: " + error.response.data.message);
+      setTimeout(()=>{
+        document.getElementById('my_modal_3').close();
+      },200)
     }
 }
     
